@@ -1,0 +1,23 @@
+<h1 class='ui header'>People</h1>
+
+<table class="ui celled table">
+  <thead>
+    <tr><th>Name</th>
+    <th>Age</th>
+    <th>Email</th>
+  </tr></thead>
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td data-label="Name"><%= person.first_name %><%= person.last_name %></td>
+        <td data-label="Age"><%= person.age %></td>
+        <td data-label="Job"><%= person.email %></td>
+        <td><%= link_to "Show", person_path(person)%></td>
+        <td><%= link_to "Delete", person_path(person), method: :delete %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<img src = "https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
